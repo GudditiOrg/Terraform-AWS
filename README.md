@@ -2,7 +2,7 @@
 
 ## Major Difference between Terraform vs AWS CloudFormation
 <p>Terraform and AWS CloudFormation are both infrastructure as code (IaC) tools used for provisioning and managing resources in cloud environments. They serve similar purposes but have differences in terms of their scope, flexibility, and ecosystem support.</p>
-```YAML
+```
 
 | Aspect                   | Terraform                                  | AWS CloudFormation                        |
 |--------------------------|--------------------------------------------|-------------------------------------------|
