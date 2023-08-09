@@ -17,3 +17,6 @@
 
 
 
+Official documentation: 
+1. https://registry.terraform.io/namespaces/hashicorp
+2. https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html
