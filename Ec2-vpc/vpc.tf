@@ -4,7 +4,7 @@ resource "aws_vpc" "my-vpc" {
   enable_dns_hostnames = "true"
   enable_dns_support   = "true"
   tags = {
-    Name =  "myvpc"
+    Name = "myvpc"
   }
 
 }
@@ -14,7 +14,7 @@ resource "aws_subnet" "subnet1" {
   cidr_block              = local.psubnet1_cidr
   availability_zone       = "us-west-2a"
   map_public_ip_on_launch = "true"
-  
+
 }
 resource "aws_subnet" "subnet2" {
   vpc_id                  = aws_vpc.my-vpc.id
