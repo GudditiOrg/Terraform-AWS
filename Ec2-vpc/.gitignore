@@ -1,0 +1,12 @@
+# Ignore Terraform files
+*.tfstate
+*.tfstate.backup
+*.tfplan
+terraform.tfstate
+terraform.tfstate.backup
+.terraform/
+*.pem
+*.pub
+
+# Ignore Terraform modules (if you keep them in a subdirectory)
+/path/to/your/modules/*
