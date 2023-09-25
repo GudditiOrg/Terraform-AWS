@@ -10,24 +10,25 @@ resource "aws_instance" "nginx" {
   vpc_security_group_ids = [
     "${aws_security_group.nginx.id}"
   ]
-  # user_data = <<EOF
-  #       sudo mkfs.ext4 /dev/xvdh
-  #       sudo mkdir /mnt/data-store
-  #       sudo mount /dev/xvdh /mnt/data-store
-  #       df -h
+  user_data = <<EOF
+        sudo apt update
+        sudo apt install nginx -y
+        sudo systemctl enable nginx
+        echo "<h1>Hello World from $(hostname -f)</h1>" > /usr/share/nginx/html
+        sudo systemctl start nginx
 
-  #   EOF
+    EOF
 
-  connection {
-    type        = "ssh"
-    user        = "ubuntu"
-    private_key = tls_private_key.rsa.private_key_pem
-    host        = aws_instance.nginx.public_ip
-  }
+  # connection {
+  #   type        = "ssh"
+  #   user        = "ubuntu"
+  #   private_key = tls_private_key.rsa.private_key_pem
+  #   host        = aws_instance.nginx.public_ip
+  # }
 
-  provisioner "remote-exec" {
-    script = "nginx.sh"
-  }
+  # provisioner "remote-exec" {
+  #   script = "nginx.sh"
+  # }
 
 
 }

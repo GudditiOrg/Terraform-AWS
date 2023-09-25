@@ -25,3 +25,8 @@ resource "local_file" "pub_key" {
   filename = "deployer-key.pub"
 
 }
+
+output "alb-dns" {
+  value = aws_lb.nginx-lb.dns_name
+  
+}
