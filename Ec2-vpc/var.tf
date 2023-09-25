@@ -23,3 +23,12 @@ variable "instancetype" {
   default     = "t2.micro"
   description = "ec2 instance type "
 }
+
+variable "domain_name" {
+
+  type = string
+  default = "gudditi.ga"
+  description = "route53 domain name "
+
+  
+}

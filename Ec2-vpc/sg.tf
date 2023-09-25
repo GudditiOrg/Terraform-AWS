@@ -9,6 +9,14 @@ resource "aws_security_group" "nginx" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "allow port 80"
   }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "allow port 22"
+  }
   egress {
     from_port   = 0
     to_port     = 0
@@ -18,7 +26,7 @@ resource "aws_security_group" "nginx" {
   }
 }
 
-resource "aws_security_group" "LB" {
+resource "aws_security_group" "lbsg" {
   vpc_id = aws_vpc.my-vpc.id
   name   = "LB"
 

@@ -27,6 +27,11 @@ resource "local_file" "pub_key" {
 }
 
 output "alb-dns" {
-  value = aws_lb.nginx-lb.dns_name
+  value = aws_lb.lb.dns_name
+  
+}
+
+output "name_servers" {
+  value = aws_route53_zone.main.name_servers
   
 }
